@@ -1,0 +1,47 @@
+@base_url = http://127.0.0.1:6543/api/v1
+@tokenAdmin = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOjEsImlhdCI6MTY5ODI3NDAwNiwiZXhwIjoxNjk4Mjc3NjA2fQ.gV-7nKfvSxY9khk0nMZm-0P5yJLRitoWRgFNWIkir4HmyvHi1vsQwptcEmVIr5sbdPqAffHGHD1mwwNIcKoNPw
+
+### GET all users
+POST {{base_url}}/users
+Authorization:Bearer {{tokenAdmin}}
+
+### GET All Article
+GET {{base_url}}/articles
+Authorization:Bearer {{tokenAdmin}}
+
+### create articles
+POST {{base_url}}/articles
+Authorization:Bearer {{tokenAdmin}}
+
+{
+
+    "title": "Article 1",
+    "content": "Content 1"
+}
+
+### update articles
+PUT {{base_url}}/articles
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "id": 1,
+    "title": "Testing update",
+    "content": "Content 1"
+}
+
+### delete articles
+DELETE {{base_url}}/articles
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "id": 2
+}
+
+
+### POST login
+POST {{base_url}}/login
+
+{
+    "username": "admin",
+    "password": "password"
+}
