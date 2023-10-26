@@ -12,7 +12,7 @@ class UserView:
     def __init__(self, request):
         self.request = request
 
-    @view_config(request_method="GET")
+    @view_config(request_method="GET", permission="admin")
     def get(self):
         try:
             query = self.request.dbsession.query(User)
@@ -29,7 +29,7 @@ class UserView:
             body=json.dumps({"data": [dict(id=row.id, name=row.name) for row in res]}),
         )
 
-    @view_config(request_method="POST")
+    @view_config(request_method="POST", permission="admin")
     def post(self):
         try:
             query = self.request.dbsession.query(User)

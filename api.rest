@@ -3,7 +3,7 @@
 @tokenUser = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsInN1YiI6MiwiaWF0IjoxNjk4MzM0Njg4LCJleHAiOjE2OTgzMzgyODh9.ZO1i6UXx-PrFJxrXnXTK1RIbMpdNWS3vBc8zJqfY_-9QdvSXxke1Sd-wzH9fVyjV_BRnl6J93ZaDQfaF8_EhBw
 
 ### GET all users
-POST {{base_url}}/users
+GET {{base_url}}/users
 Authorization:Bearer {{tokenAdmin}}
 
 ### GET All Article
