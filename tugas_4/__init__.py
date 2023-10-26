@@ -8,7 +8,10 @@ from pyramid.authorization import ACLHelper, Authenticated, Everyone, Allow
 
 
 class RootACL(object):
-    __acl__ = [(Allow, "admin", ALL_PERMISSIONS), (Allow, "user", "view")]
+    __acl__ = [
+        (Allow, "admin", ALL_PERMISSIONS),
+        (Allow, "user", "view"),
+    ]
 
     def __init__(self, request):
         pass

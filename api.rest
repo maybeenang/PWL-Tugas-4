@@ -1,5 +1,6 @@
 @base_url = http://127.0.0.1:6543/api/v1
-@tokenAdmin = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOjEsImlhdCI6MTY5ODI3NDAwNiwiZXhwIjoxNjk4Mjc3NjA2fQ.gV-7nKfvSxY9khk0nMZm-0P5yJLRitoWRgFNWIkir4HmyvHi1vsQwptcEmVIr5sbdPqAffHGHD1mwwNIcKoNPw
+@tokenAdmin = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOjEsImlhdCI6MTY5ODMzNDY1MSwiZXhwIjoxNjk4MzM4MjUxfQ.KaEFvCeoBMbUZ1Ibb-FKTQM259x9Hg60knUlBW_qjSrsruCiz2UArRqqnQwfWDtEh1VTATThJbKVyQRV-PXOVA
+@tokenUser = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsInN1YiI6MiwiaWF0IjoxNjk4MzM0Njg4LCJleHAiOjE2OTgzMzgyODh9.ZO1i6UXx-PrFJxrXnXTK1RIbMpdNWS3vBc8zJqfY_-9QdvSXxke1Sd-wzH9fVyjV_BRnl6J93ZaDQfaF8_EhBw
 
 ### GET all users
 POST {{base_url}}/users
@@ -7,7 +8,7 @@ Authorization:Bearer {{tokenAdmin}}
 
 ### GET All Article
 GET {{base_url}}/articles
-Authorization:Bearer {{tokenAdmin}}
+Authorization:Bearer {{tokenUser}}
 
 ### create articles
 POST {{base_url}}/articles
@@ -21,7 +22,7 @@ Authorization:Bearer {{tokenAdmin}}
 
 ### update articles
 PUT {{base_url}}/articles
-Authorization: Bearer {{tokenAdmin}}
+Authorization: Bearer {{tokenUser}}
 
 {
     "id": 1,
@@ -42,6 +43,18 @@ Authorization: Bearer {{tokenAdmin}}
 POST {{base_url}}/login
 
 {
-    "username": "admin",
+    "username": "user2",
     "password": "password"
 }
+
+### POST register
+POST {{base_url}}/register
+
+{
+    "username": "user2",
+    "password": "password"
+}
+
+
+### GET logout
+GET {{base_url}}/logout
